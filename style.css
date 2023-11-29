@@ -1,4 +1,71 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+html, body {
   height: 100%;
   width: 100%;
+  font-family: 'League Spartan', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* ------- THEME 1 ------ */
+  /* BACKGROUNDS */
+  --very-dark-desaturated-blue-main: hsl(222, 26%, 31%);
+  --very-dark-desaturated-blue-toggle: hsl(223, 31%, 20%);
+  --very-dark-desaturated-blue-screen: hsl(224, 36%, 15%);
+
+  /* KEYS */
+  --desaturated-dark-blue-bg: hsl(225, 21%, 49%);
+  --desaturated-dark-blue-shadow: hsl(224, 28%, 35%);
+  
+  --red: hsl(6, 63%, 50%);
+  --dark-red: hsl(6, 70%, 34%);
+  
+  --light-grayish-orange: hsl(30, 25%, 89%);
+  --grayish-orange: hsl(28, 16%, 65%);
+
+  /* TEXT */
+  --very-dark-grayish-blue: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.outer-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-dark-desaturated-blue-main);
+}
+
+main {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen {
+  background-color: var(--very-dark-desaturated-blue-screen);
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
+  background-color: var(--very-dark-desaturated-blue-screen);
+}
+
+.button {
+  background-color: var(--light-grayish-orange);
+  text-align: center;
 }
