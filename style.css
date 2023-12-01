@@ -146,6 +146,8 @@ header {
   align-items: center;
 
   padding: 5px 15px;
+
+  cursor: pointer;
 }
 
 .del-button, .reset-button {

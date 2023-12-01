@@ -7,6 +7,8 @@ const screen = document.querySelector(".screen");
 const keys = [7, 8, 9, "del", 4, 5, 6, "+", 1, 2, 3, "-", ".", "0", "/", "x", "reset", "="];
 
 let currentPhrase = "";
+let visiblePhrase = "";
+let lastKey = "";
 
 createKeyboard();
 
@@ -23,8 +25,39 @@ function createKeyboard() {
 
     //Add listener
     button.addEventListener("click", ()=>{
-      currentPhrase+=button.textContent;
-      screen.textContent = currentPhrase;
+      updateKeyboard(keys[i]);
     })
   }
+}
+
+function updateKeyboard(currentKey) {
+  if (currentKey == "=") {
+    currentPhrase = eval(currentPhrase);
+    visiblePhrase = currentPhrase;
+    lastKey = currentPhrase;
+  } else {
+    if (currentKey === "reset") {
+      currentPhrase = "";
+      visiblePhrase = "";
+    } else if (currentKey === "del") {
+      currentPhrase = currentPhrase.slice(0, -1);
+      lastKey = currentPhrase.charAt(currentPhrase.length - 1);
+      console.log(lastKey);
+      visiblePhrase = currentPhrase;
+    } else if (isNaN(currentKey)) {
+      currentPhrase = eval(currentPhrase);
+      currentPhrase += currentKey;
+      visiblePhrase = currentPhrase;
+    } else { // number
+      if (!isNaN(lastKey)) {
+        // clears and starts with a new number
+        currentPhrase = currentKey;
+      } else {
+        currentPhrase += currentKey;
+      }
+      visiblePhrase = currentPhrase;
+    }
+    lastKey = currentKey;
+    }
+  screen.innerHTML = `<p>${visiblePhrase}</p>`;
 }
