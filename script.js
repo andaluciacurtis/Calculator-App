@@ -10,6 +10,7 @@ let currentPhrase = "0";
 let lastKey = "";
 let isDecimal = false;
 
+screen.innerHTML = `<p>${currentPhrase}</p>`
 createKeyboard();
 
 function createKeyboard() {
@@ -67,7 +68,7 @@ function updateKeyboard(currentKey) {
     if (isNaN(lastKey) && lastKey != "=" && lastKey != "del" && lastKey != "reset") {
       return;
     }
-    currentPhrase = eval(currentPhrase);
+    currentPhrase = Math.round(eval(currentPhrase) * 100000) / 100000;
     currentPhrase += currentKey;
     
     // ensures that two decimal points aren't put in the same number

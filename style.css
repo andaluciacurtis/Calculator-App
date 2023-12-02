@@ -30,6 +30,44 @@ html, body {
   /* TEXT */
   --very-dark-grayish-blue: hsl(221, 14%, 31%);
   --white: hsl(0, 0%, 100%);
+
+  /* ------- THEME 2 ------- */
+  /* BACKGROUNDS */
+  --light-gray-background: hsl(0, 0%, 90%);
+  --grayish-red: hsl(0, 5%, 81%);
+  --very-light-gray: hsl(0, 0%, 93%);
+  
+  /* KEYS */
+  --dark-moderate-cyan: hsl(185, 42%, 37%);
+  --very-dark-cyan: hsl(185, 58%, 25%);
+  
+  --orange: hsl(25, 98%, 40%);
+  --dark-orange: hsl(25, 99%, 27%);
+
+  --light-grayish-yellow: hsl(45, 7%, 89%);
+  --dark-grayish-orange: hsl(35, 11%, 61%);
+
+  /* TEXT */
+  --very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+  /* ------- THEME 3 ------- */
+  /* BACKGROUND */
+  --very-dark-violet-background: hsl(268, 75%, 9%);
+  --very-dark-violet-toggle: hsl(268, 71%, 12%);
+
+  /* KEYS */
+  --dark-violet: hsl(281, 89%, 26%);
+  --vivid-magenta: hsl(285, 91%, 52%);
+
+  --pure-cyan: hsl(176, 100%, 44%);
+  --soft-cyan: hsl(177, 92%, 70%);
+
+  --very-dark-violet: hsl(268, 47%, 21%);
+  --dark-magenta: hsl(290, 70%, 36%);
+
+  /* TEXT */
+  --light-yellow: hsl(52, 100%, 62%);
+  --very-dark-blue: hsl(198, 20%, 13%);
 }
 
 
@@ -122,6 +160,8 @@ header {
   text-align: end;
   border-radius: 5px;
   padding: 15px;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .keyboard {
