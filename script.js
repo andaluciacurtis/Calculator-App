@@ -63,6 +63,10 @@ function updateKeyboard(currentKey) {
       isDecimal = true;
     }
   } else if (isNaN(currentKey)) {
+    // cannot add two operators in a row or an operator after a decimal point
+    if (isNaN(lastKey) && lastKey != "=" && lastKey != "del" && lastKey != "reset") {
+      return;
+    }
     currentPhrase = eval(currentPhrase);
     currentPhrase += currentKey;
     
@@ -75,7 +79,8 @@ function updateKeyboard(currentKey) {
       // clears and starts with a new number
       currentPhrase = currentKey;
     } else {
-      currentPhrase += currentKey;
+      // ensures that numbers aren't added automatically
+      currentPhrase += `${currentKey}`;
     }
   }  
   lastKey = currentKey;
