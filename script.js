@@ -4,7 +4,7 @@
 
 const keyboard = document.querySelector(".keyboard");
 const screen = document.querySelector(".screen");
-const keys = [7, 8, 9, "del", 4, 5, 6, "+", 1, 2, 3, "-", ".", "0", "/", "x", "reset", "="];
+const keys = [7, 8, 9, "del", 4, 5, 6, "+", 1, 2, 3, "-", ".", "0", "/", "*", "reset", "="];
 
 let currentPhrase = "";
 let visiblePhrase = "";
@@ -14,16 +14,26 @@ createKeyboard();
 
 function createKeyboard() {
   for (let i = 0; i < keys.length; i++) {
-    // Create new button for the current key
     let button = document.createElement("div");
     
     button.classList.add("button");
-    button.classList.add(keys[i] + "-button");
-    button.innerHTML = `<p>${keys[i]}</p>`;
+
+    // = and * buttons need to have different views and/or class names, so we will
+    // make those the exception
+    if (keys[i] === "=") {
+      button.classList.add("equal-button");
+    } else {
+      button.classList.add(keys[i] + "-button");
+    }
+
+    if (keys[i] === "*") {
+      button.innerHTML = `<p>x</p>`;
+    } else {
+      button.innerHTML = `<p>${keys[i]}</p>`;
+    }
     
     keyboard.appendChild(button);
 
-    //Add listener
     button.addEventListener("click", ()=>{
       updateKeyboard(keys[i]);
     })

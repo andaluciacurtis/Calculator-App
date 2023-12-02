@@ -153,9 +153,10 @@ header {
 .del-button, .reset-button {
   background-color: var(--desaturated-dark-blue-bg);
   box-shadow: 0 3px var(--desaturated-dark-blue-shadow);
+  font-style:initial;
 }
 
-.equals-button {
+.equal-button {
   background-color: var(--red);
   box-shadow: 0 3px var(--dark-red);
 }
