@@ -138,21 +138,13 @@ header {
 }
 
 .slider-button-bg {
-  width: 45px;
-  height: 13px;
   background-color: var(--very-dark-desaturated-blue-toggle);
   border-radius: 50px;
 
   display: flex;
   align-items: center;
   padding: 3px;
-}
-
-.slider-button {
-  background-color: var(--red);
-  height: 10px;
-  width: 10px;
-  border-radius: 100%;
+  gap: 5px;
 }
 
 .screen {
@@ -203,4 +195,15 @@ header {
 
 .reset-button, .equal-button {
   grid-column: span 2;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--red);
 }
