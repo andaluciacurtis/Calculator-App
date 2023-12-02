@@ -57,11 +57,11 @@ h2 {
   padding-top: 3px;
 }
 
-.del p, .reset p {
+.del-button p, .reset-button p {
   font-size: 0.9rem;
 }
 
-.del p, .reset p, .equals p {
+.del-button p, .reset-button p, .equal-button p {
   color: var(--white);
 }
 
@@ -153,7 +153,7 @@ header {
 .del-button, .reset-button {
   background-color: var(--desaturated-dark-blue-bg);
   box-shadow: 0 3px var(--desaturated-dark-blue-shadow);
-  font-style:initial;
+  text-transform: uppercase;
 }
 
 .equal-button {
@@ -161,6 +161,6 @@ header {
   box-shadow: 0 3px var(--dark-red);
 }
 
-.reset-button, .equals-button {
+.reset-button, .equal-button {
   grid-column: span 2;
 }
