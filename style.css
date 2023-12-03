@@ -207,6 +207,11 @@ header {
   cursor: pointer;
 }
 
+.button:active {
+  box-shadow: 0 0 var(--key-bg-3-shdw);
+  transform: translateY(3px);
+}
+
 .del-button, .reset-button {
   background-color: var(--key-bg-1);
   box-shadow: 0 3px var(--key-bg-1-shdw);
