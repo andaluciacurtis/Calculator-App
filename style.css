@@ -93,7 +93,13 @@ h1 {
   color: var(--heading-txt-clr);
 }
 
-h2, label {
+h2 {
+  font-size: 0.5rem;
+  color: var(--heading-txt-clr);
+  padding-bottom: 4px;
+}
+
+label {
   font-size: 0.5rem;
   color: var(--heading-txt-clr);
 }
@@ -162,8 +168,8 @@ header {
 
   display: flex;
   align-items: center;
-  padding: 3px;
-  gap: 5px;
+  padding: 0 1px;
+  gap: 1px;
 }
 
 .screen {
