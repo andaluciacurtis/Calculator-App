@@ -142,7 +142,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 21%;
+  max-width: Min(250px, 80%);
 }
 
 header {
