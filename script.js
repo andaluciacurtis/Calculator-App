@@ -47,9 +47,11 @@ function updateKeyboard(currentKey) {
   } else if (currentKey === "reset") {
     currentPhrase = "0";
   } else if (currentKey === "del") {
-    currentPhrase = currentPhrase.slice(0, -1);
-    lastKey = currentPhrase.charAt(currentPhrase.length - 1);
-    console.log(lastKey);
+    if (currentPhrase.length <= 1) {
+      currentPhrase = "0";
+    } else {
+      currentPhrase = currentPhrase.slice(0, -1);
+    }
   } else if (currentKey === ".") {
     if (currentPhrase.includes(".") && isDecimal) {
       return;
@@ -78,7 +80,7 @@ function updateKeyboard(currentKey) {
   } else { // number
     if (lastKey === "=" || lastKey === "reset" || currentPhrase == "0") {
       // clears and starts with a new number
-      currentPhrase = currentKey;
+      currentPhrase = `${currentKey}`;
     } else {
       // ensures that numbers aren't added automatically
       currentPhrase += `${currentKey}`;
